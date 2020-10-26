@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.ty.FragmentDetailNote"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+        android:id="@+id/note_top_bar_fragment"
+        android:name="com.huanglf.test16.ui.ty.TopBarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_top_bar" />
+
+    <ImageView
+        android:id="@+id/tag"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/note_top_bar_fragment"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/tag"
+        android:layout_marginRight="@dimen/activity_horizontal_margin" />
+
+    <com.huanglf.test16.repository.editText.ExtendEditText
+        android:id="@+id/extend_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="8dp"
+        android:gravity="start"
+        android:layout_below="@id/tag"
+        android:layout_marginTop="10dp"
+        android:layout_above="@+id/bottom_bar"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:scrollbars="none"
+        android:background="@android:color/transparent"
+        app:bulletColor="@color/colorPrimary"
+        app:quoteColor="@color/colorPrimary"
+        app:linkColor="@color/colorPrimaryDark"
+        app:drawUnderLine="true"
+        app:enableHistory="true"
+        app:historyCapacity="50"
+        app:rule="EXCLUSIVE_EXCLUSIVE"/>
+
+    <include layout="@layout/edit_text_format_layout"
+            android:id="@+id/bottom_bar" />
+</RelativeLayout>
